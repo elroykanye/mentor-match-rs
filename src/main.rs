@@ -1,6 +1,8 @@
-mod db;
-mod model;
-mod service;
+mod api;
+
+use crate::api::hello::hello;
+use crate::api::mentor_con::new_mentor;
+use crate::api::mentor_con::get_all_mentors;
 
 #[macro_use] extern crate rocket;
 
@@ -10,13 +12,12 @@ fn index() -> &'static str {
 }
 
 //noinspection ALL
-#[launch]
-fn rocket() -> _ {
+#[rocket::main]
+async fn main() {
     rocket::build().mount("/", routes![index])
+        .mount("/mentor/new", routes![new_mentor])
+        .mount("/mentor/new", routes![new_mentor])
+        .mount("/mentor/all", routes![get_all_mentors])
+        .launch()
+        .await;
 }
-/*
-fn main() {
-    println!("Hello, world!");
-}
-*/
-fn main() {}
