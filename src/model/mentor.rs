@@ -1,6 +1,6 @@
 struct Mentor {
-    first_name: &str,
-    second_name: &str,
-    level: &str,
-    dept: &str,
+    first_name: String,
+    second_name: String,
+    level: String,
+    dept: String,
 }
