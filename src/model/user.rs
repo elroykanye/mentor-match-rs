@@ -1,4 +1,4 @@
 struct User {
     username: String,
-    email: String
+    email: String,
 }
