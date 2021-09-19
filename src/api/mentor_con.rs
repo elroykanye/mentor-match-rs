@@ -1,7 +1,7 @@
 use rocket::form::{Form, Contextual, Submit};
 
 #[post("/mentor/new", data = "<newMentorForm>")]
-pub fn new_mentor<'r>(newMentorForm: Form<Contextual<'_, Submit<'r>>>) -> bool {
+pub fn new_mentor(newMentorForm: Form<Contextual<Submit>>) -> bool {
 
     true
 }
